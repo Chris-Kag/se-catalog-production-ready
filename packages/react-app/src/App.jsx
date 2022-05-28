@@ -40,6 +40,7 @@ import {
   SparklesIcon,
   CurrencyDollarIcon,
   ShareIcon,
+  BookOpenIcon
 } from '@heroicons/react/outline';
 
 const { ethers } = require("ethers");
@@ -83,7 +84,7 @@ const providers = [
 function App(props) {
   // specify all the chains your app is available on. Eg: ['localhost', 'mainnet', ...otherNetworks ]
   // reference './constants.js' for other networks
-  const networkOptions = [initialNetwork.name, "mainnet", "rinkeby"];
+  const networkOptions = [initialNetwork.name, "mainnet", "rinkeby", "kovan", "goerli", "xdai", "fantom", "polygon", "mumbai", "optimism", "kovanOptimism", "fujiAvalanche", "mainnetAvalanche", "testnetHarmony", "mainnetHarmony", "moonbeam", "moonriver"];
 
   const [injectedProvider, setInjectedProvider] = useState();
   const [address, setAddress] = useState();
@@ -257,12 +258,7 @@ function App(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '/', icon: HomeIcon },
-    { name: 'Debug Contracts', href: '/debug', icon: CodeIcon },
-    { name: 'Hints', href: '/hints', icon: SparklesIcon },
-    { name: 'ExampleUI', href: '/exampleui', icon: TemplateIcon },
-    { name: 'Mainnet DAI', href: '/mainnetdai', icon: CurrencyDollarIcon },
-    { name: 'Subgraph', href: '/subgraph', icon: ShareIcon },
+    { name: 'Catalog', href: '/', icon: BookOpenIcon },
   ];
 
   return (
@@ -324,7 +320,7 @@ function App(props) {
                           to={item.href}
                           className={classNames(
                             current ?
-                              'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white'
+                              'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-[#18c4e2]'
                             :
                               'text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white',
                               'group flex items-center px-2 py-2 text-base font-medium rounded-md'
